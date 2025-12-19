@@ -4,8 +4,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.modulith.core.ApplicationModules;
 import org.springframework.modulith.docs.Documenter;
 
-class ArchitectureTests {
+class ArchitectureTest {
     ApplicationModules modules = ApplicationModules.of(EShopApplication.class);
+
 
     @Test
     void verifyArchitecture() {
@@ -17,6 +18,7 @@ class ArchitectureTests {
         new Documenter(modules)
                 .writeModulesAsPlantUml()
                 .writeIndividualModulesAsPlantUml()
-                .writeModuleCanvases();
+                .writeModuleCanvases()
+                .writeDocumentation();
     }
 }
