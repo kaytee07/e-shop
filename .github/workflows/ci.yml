@@ -27,6 +27,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: 'modulith docs'
+          path: target/modulith-docs/
 
   docker-build:
      needs: build-and-verify
