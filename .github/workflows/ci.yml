@@ -30,21 +30,21 @@ jobs:
           path: target/modulith-docs/
 
   docker-build:
-     needs: build-and-verify
-     runs-on: ubuntu-latest
-     if: github.event.name == 'push'
+    needs: build-and-verify
+    runs-on: ubuntu-latest
+    if: github.event.name == 'push'
 
-     steps:
-       - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
-       - name: Set up Docker Buildx
-         uses: docker/setup-buildx-action@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
-       - name: Build Docker Image (Layered)
-         uses: docker/build-push-action@v5
-         with:
-           context: .
-           push: false
-           tags: e-shop:latest
-           cache-from: type=gha
-           cache-to: type=gha,mode=max
+      - name: Build Docker Image (Layered)
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: false
+          tags: e-shop:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
