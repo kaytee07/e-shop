@@ -4,10 +4,12 @@ import com.shop.eshop.modules.identity.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 import java.util.List;
 
+@Component
 @RequiredArgsConstructor
 public class UserPrincipal implements UserDetails {
     private final User user;
